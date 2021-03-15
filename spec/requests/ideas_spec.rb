@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'uri'
+require 'cgi'
 
 RSpec.describe 'Ideas', type: :request do
   describe 'GET' do
@@ -16,7 +16,7 @@ RSpec.describe 'Ideas', type: :request do
 
     it 'with not registered parameter returns 404' do
       expect do
-        get "/ideas/?category_name=#{URI.encode('not_registerd_word')}"
+        get "/ideas/?category_name=#{CGI.escape('not_registerd_word')}"
       end.to raise_error(ActionController::RoutingError)
     end
   end
