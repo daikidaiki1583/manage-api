@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 使用方法
+<br>
 
-Things you may want to cover:
+### アイデア登録
 
-* Ruby version
+`localhost:3000/ideas`に対して下記Json形式でPOSTリクエストを送信。
+```
+{
+    "category_name":"働き方改革",
+    "body":"リモートワーク"
+}
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### アイデア取得
+`localhost:3000/ideas`に対して下記Json形式でGETリクエストを送信。
+```
+{
+    "category_name":"業務改善"
+}
+```
